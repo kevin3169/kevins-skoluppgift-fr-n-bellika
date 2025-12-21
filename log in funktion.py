@@ -1,16 +1,12 @@
-def skapa_profil():
-    print("\n--- Skapa din träningsprofil ---")
-    namn = input("Vad heter du? ")
-    ålder = input("Hur gammal är du? ")
-    erfarenhet = input("Hur länge har du tränat? (t.ex 1 år, nybörjare, 5+ år): ")
-    mål = input("Vad är ditt övergripande träningsmål? ")
+users = {}
 
-    profil = {
-        "namn": namn,
-        "ålder": ålder,
-        "erfarenhet": erfarenhet,
-        "mål": mål
-    }
-
-    print("\nDin profil har sparats! ✔")
-    return profil
+def login():
+    print("skapa din profil")
+    while True:
+        username = input("använarnamn")
+        password = input("lösenord")
+        if username in users and users[username] == password:
+            print(f"Hej {username}! Du är inloggad.\n")
+            return True
+        else:
+            print("Fel användarnamn eller lösenord. Försök igen.\n")
