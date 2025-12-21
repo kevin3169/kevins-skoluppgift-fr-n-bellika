@@ -129,3 +129,35 @@ quiz = [
         "answer": "B"
     }
 ]
+import random
+
+playing = True
+
+while playing:
+    score = 0
+    random.shuffle(quiz)  
+
+    for q in quiz:
+        print("\n" + q["question"])
+        for option in q["options"]:
+            print(option)
+
+        answer = ""
+        while answer not in ["A", "B", "C", "D"]:
+            answer = input("Ditt svar (A/B/C/D): ").upper()
+            if answer not in ["A", "B", "C", "D"]:
+                print("Fel input, välj A, B, C eller D.")
+
+        if answer == q["answer"]:
+            print("Rätt!")
+            score += 1
+        else:
+            print(f"Fel! Rätt svar var {q['answer']}")
+
+    print(f"\nResultat: {score} av {len(quiz)} rätt")
+
+    again = input("Vill du spela igen? (j/n): ").lower()
+    if again != "j":
+        playing = False
+
+print("Tack för att du spelade ")
