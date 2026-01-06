@@ -1,20 +1,9 @@
-# Metal Quiz (pytest + CLI + Tkinter)
+# Kevins skoluppgift – Pytest
 
-## Kom igång (Git Bash / Windows)
-
-```bash
+## Install
 python -m venv venv
 source venv/Scripts/activate
 pip install -r requirements.txt
-pytest -v
-```
 
-## Kör i terminal
-```bash
-python -m quiz.cli_app
-```
-
-## Kör GUI (tkinter)
-```bash
-python -m gui.tkinter_quiz
-```
+## Run tests
+python -m pytest -v
